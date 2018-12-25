@@ -20,33 +20,26 @@
     }
   }
   { // produce
-      var frames = {global: {b: undefined, g: undefined}};
-      var objects = {};
+                                const frames = {global: {b: undefined, g: undefined}};
+                                const objects = {};
 
-    var b = 3;
-      frames.global.b = 3
+    var b = 3;                  frames.global.b = 3
 
-    const a = 2;
-      frames.global.a = 2
+    const a = 2;                frames.global.a = 2
 
-    let c = 0;
-      frames.global.c = 0
+    let c = 0;                  frames.global.c = 0
 
-    var g = [a, b, c];
-      frames.global.g = 'objects.array'
-      objects.array = [2, 3, 0]
+    var g = [a, b, c];          frames.global.g = 'objects.array'
+                                objects.array = [2, 3, 0]
 
-    c = g.push(c)
-      frames.global.c = 4
-      objects.array = [2, 3, 0, 0]
+    c = g.push(c)               frames.global.c = 4
+                                objects.array = [2, 3, 0, 0]
 
-
-    // at the conditional, only one path is taken
-    if (c[2] === c) { // undefined === 4 -> false
+    // only one path executes
+    if (c[2] === c) {           // undefined === 4 -> false
       b = a;
     } else {
-      b = c;
-        frames.global.b = 4
+      b = c;                    frames.global.b = 4
     }
   }
 }
