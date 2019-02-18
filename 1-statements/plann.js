@@ -59,10 +59,10 @@
     const x = a % b;            frames.global.x = 1;
     let y = a - x;              frames.global.y = 2;
     const g = [a, b, x, y];     objects.arr_1 = [3, 2, 1, 2]
-                                frames.global.g = 'arr_1'
+                                frames.global.g = objects.arr_1
     y = g[b];                   frames.global.y = 1
     g.pop();                    objects.arr_1 = [3, 2, 1]
-    var s = g;                  frames.global.s = 'arr_1'
+    var s = g;                  frames.global.s = objects.arr_1
   }
   { // or
                                 const frames = {global: {s: undefined}};
